@@ -6,18 +6,22 @@ class Search extends Component {
     state = {
         results: []
     }
+        
+componentDidMount() {
+    API.getRandomDog()
+        .then((res) => { 
+           this.setState({ results: res.data.message });
+       // console.log("HELP!!", res.data.message);
+        })
+        
+        .catch((err) => {console.log(err);});
+};
 
-    componentDidMount() {
-        API.getRandomDog()
-            .then(res => this.setState({ results }))
-            .catch(err => console.log(err));
-    };
-
-    render() {
-        return (
-            <SearchResults results={this.state.results} />
-        );
-    }
+render() {
+    return (
+        <SearchResults results={this.state.results} />
+    );
+}
 }
 export default Search;
 

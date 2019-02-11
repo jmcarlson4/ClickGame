@@ -1,13 +1,18 @@
 import React from 'react';
 import Jumbotron from './components/Jumbotron';
-import Score from './components/Score';
-import SearchResults from './components/SearchResults';
+import Search from './pages/Search';
+//import Score from './components/Score';
+//import SearchResults from './components/SearchResults';
 
 
 function App()  {
   
     return (
-    <Jumbotron/>);
+        <div>
+    <Jumbotron/>
+    <Search/>
+    
+    </div>);
     
     
 };
